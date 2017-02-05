@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">Budget</string>
     <string name="action_settings">Settings</string>
+    <string-array name="spinner_recurrence_values">
+        <item>NonRecurring</item>
+        <item>Recurring</item>
+    </string-array>
+    <string-array name="spinner_expense_nonrecurring_categories">
+        <item>Groceries</item>
+        <item>Gas</item>
+        <item>Food</item>
+        <item>Clothing</item>
+        <item>Unplanned</item>
+    </string-array>
+    <string-array name="spinner_expense_recurring_categories">
+        <item>Rent</item>
+        <item>Car Payment</item>
+        <item>Car Insurance</item>
+        <item>Phone Payment</item>
+    </string-array>
 </resources>
