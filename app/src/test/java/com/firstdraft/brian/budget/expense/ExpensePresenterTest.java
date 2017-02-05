@@ -7,7 +7,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 /**
@@ -58,6 +57,8 @@ public class ExpensePresenterTest {
         // TODO: 1/31/2017 null all instantiated variables
     }
 
+    // TODO: 2/5/2017 consider refactoring tests, maybe split up to avoid redundancy
+    // TODO: 2/5/2017 add test for error conditions
     @Test
     public void shouldSaveExpense_givenNonRecurrence() {
         verify(view).showMonetaryInputField();
@@ -74,6 +75,9 @@ public class ExpensePresenterTest {
 
         presenter.expenseButtonClicked();
         verify(model).saveExpense(nonRecExpense);
+        verify(view).showLoadingView();
+        verify(view).dismissLoadingView();
+        verify(view).showExpenseSavedView();
     }
 
     @Test
@@ -92,6 +96,9 @@ public class ExpensePresenterTest {
 
         presenter.expenseButtonClicked();
         verify(model).saveExpense(expense);
+        verify(view).showLoadingView();
+        verify(view).dismissLoadingView();
+        verify(view).showExpenseSavedView();
     }
 
 }

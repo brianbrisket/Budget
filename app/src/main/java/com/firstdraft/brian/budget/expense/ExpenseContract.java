@@ -18,6 +18,14 @@ public interface ExpenseContract {
         void showRecurrenceField();
         void showCategoryMenu(String[] list);
         void showConfirmExpenseButton();
+
+        void showLoadingView();
+
+        void dismissLoadingView();
+
+        void showErrorView(String errorMessage);
+
+        void showExpenseSavedView();
     }
 
     interface Presenter {
@@ -27,6 +35,5 @@ public interface ExpenseContract {
         void recurrenceSelected(String recurrenceType);
         void categorySelected(String category);
         void expenseButtonClicked();
-
     }
 }
