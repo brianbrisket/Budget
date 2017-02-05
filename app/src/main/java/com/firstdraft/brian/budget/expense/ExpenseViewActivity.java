@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blackcat.currencyedittext.CurrencyEditText;
 import com.firstdraft.brian.budget.R;
@@ -36,15 +37,14 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         categoryMenu = (Spinner) findViewById(R.id.category_menu);
         addExpenseButton = (Button) findViewById(R.id.add_expense_button);
 
-        addExpenseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(getBaseContext(), expenseInputField.getText(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
         presenter = new ExpensePresenter();
         presenter.bindView(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        presenter.unbindView();
+        super.onDestroy();
     }
 
     // TODO: 2/4/2017 write test to check against different currency locales
@@ -119,5 +119,26 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
                 presenter.expenseButtonClicked();
             }
         });
+    }
+
+    @Override
+    public void showLoadingView() {
+
+    }
+
+    @Override
+    public void dismissLoadingView() {
+
+    }
+
+    @Override
+    public void showErrorView(String errorMessage) {
+
+    }
+
+    @Override
+    public void showExpenseSavedView() {
+        Toast.makeText(this, "Expense Saved!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }
