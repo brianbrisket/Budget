@@ -18,13 +18,9 @@ public interface ExpenseContract {
         void showRecurrenceField();
         void showCategoryMenu(String[] list);
         void showConfirmExpenseButton();
-
         void showLoadingView();
-
         void dismissLoadingView();
-
         void showErrorView(String errorMessage);
-
         void showExpenseSavedView();
     }
 

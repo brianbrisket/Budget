@@ -15,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home_view);
 
         addExpenseButton = (Button) findViewById(R.id.home_add_expense_button);
         addExpenseButton.setOnClickListener(new View.OnClickListener() {
