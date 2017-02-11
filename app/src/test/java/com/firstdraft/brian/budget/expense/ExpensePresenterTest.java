@@ -73,7 +73,7 @@ public class ExpensePresenterTest {
         presenter.categorySelected(category);
         verify(view).showConfirmExpenseButton();
 
-        presenter.expenseButtonClicked();
+        presenter.saveExpenseButtonClicked();
         verify(model).saveExpense(nonRecExpense);
         verify(view).showLoadingView();
         verify(view).dismissLoadingView();
@@ -94,7 +94,7 @@ public class ExpensePresenterTest {
         presenter.categorySelected(category);
         verify(view).showConfirmExpenseButton();
 
-        presenter.expenseButtonClicked();
+        presenter.saveExpenseButtonClicked();
         verify(model).saveExpense(expense);
         verify(view).showLoadingView();
         verify(view).dismissLoadingView();

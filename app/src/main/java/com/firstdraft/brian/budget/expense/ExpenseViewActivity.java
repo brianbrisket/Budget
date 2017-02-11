@@ -35,7 +35,7 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         recurrenceMenu = (Spinner) findViewById(R.id.recurrence_menu);
         categoryMenuTitle = (TextView) findViewById(R.id.category_menu_title);
         categoryMenu = (Spinner) findViewById(R.id.category_menu);
-        addExpenseButton = (Button) findViewById(R.id.add_expense_button);
+        addExpenseButton = (Button) findViewById(R.id.save_expense_button);
 
         presenter = new ExpensePresenter();
         presenter.bindView(this);
@@ -123,7 +123,7 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         addExpenseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.expenseButtonClicked();
+                presenter.saveExpenseButtonClicked();
             }
         });
     }

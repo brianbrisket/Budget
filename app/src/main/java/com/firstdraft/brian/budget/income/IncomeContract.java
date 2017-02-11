@@ -7,40 +7,30 @@ package com.firstdraft.brian.budget.income;
 public interface IncomeContract {
 
     interface Model {
-        String[] getRecurrenceCategories();
-
-        String[] getNonRecurrenceCategories();
-        //void saveIncome(Income income);
+        String[] getCategories(boolean value);
     }
 
     interface View {
         void showMonetaryInputField();
-
         void showRecurrenceSpinner();
-
         void showCategoriesSpinner(String[] list);
-
         void showConfirmIncomeButton();
-
         void showLoadingView();
-
         void dismissLoadingView();
-
         void showErrorView(String errorMessage);
 
-        void showExpenseSavedView();
+        void showIncomeSavedView();
     }
 
     interface Presenter {
         void bindView(IncomeContract.View view);
-
         void unbindView();
-
         void receivedMonetaryInput(Float incomeValue);
 
-        //void receivedRecurrence(String );
-        void receivedCategory();
+        void receivedRecurrence(boolean value);
 
-        void addIncomeButtonClicked();
+        void receivedCategory(String category);
+
+        void saveIncomeButtonClicked();
     }
 }

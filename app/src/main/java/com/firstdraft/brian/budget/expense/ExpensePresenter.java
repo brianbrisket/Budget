@@ -57,7 +57,7 @@ class ExpensePresenter implements ExpenseContract.Presenter {
     }
 
     @Override
-    public void expenseButtonClicked() {
+    public void saveExpenseButtonClicked() {
         view.showLoadingView();
         model.saveExpense(new Expense(expenseValue, recurrenceType, category));
         view.dismissLoadingView();

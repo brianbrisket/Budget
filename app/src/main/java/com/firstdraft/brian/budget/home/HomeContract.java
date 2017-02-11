@@ -13,24 +13,17 @@ public interface HomeContract {
 
     interface View {
         void showDate(String date);
-
         void showMonthBalance(Float balance);
-
         void navigateToAddExpenseView();
-
         void navigateToAddIncomeView();
-
         void navigateToReportsView();
     }
 
     interface Presenter {
         void bindView(HomeContract.View view);
         void unbindView();
-
         void addExpenseButtonClicked();
-
         void addIncomeButtonClicked();
-
         void reportsButtonClicked();
     }
 }
