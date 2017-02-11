@@ -42,10 +42,17 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
     }
 
     @Override
-    protected void onDestroy() {
-        presenter.unbindView();
-        super.onDestroy();
+    protected void onStart() {
+        super.onStart();
+        presenter.bindView(this);
     }
+
+    @Override
+    protected void onStop() {
+        presenter.unbindView();
+        super.onStop();
+    }
+
 
     // TODO: 2/4/2017 write test to check against different currency locales
     // TODO: 2/4/2017 deselect input field on button click

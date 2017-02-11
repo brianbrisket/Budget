@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.firstdraft.brian.budget.R;
 import com.firstdraft.brian.budget.expense.ExpenseViewActivity;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeViewActivity extends AppCompatActivity {
     private Button addExpenseButton;
 
     @Override
@@ -25,6 +25,4 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }

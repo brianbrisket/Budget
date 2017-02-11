@@ -7,26 +7,30 @@ package com.firstdraft.brian.budget.home;
 public interface HomeContract {
 
     interface Model {
-        String getMonthandYear();
-
+        String getMonthAndYear();
         Float getMonthBalance();
     }
 
     interface View {
-        void showDate();
+        void showDate(String date);
 
-        void showMonthBalance();
+        void showMonthBalance(Float balance);
+
+        void navigateToAddExpenseView();
+
+        void navigateToAddIncomeView();
+
+        void navigateToReportsView();
     }
 
     interface Presenter {
         void bindView(HomeContract.View view);
-
         void unbindView();
 
-        void clickedAddExpenseButton();
+        void addExpenseButtonClicked();
 
-        void clickedAddIncomeButton();
+        void addIncomeButtonClicked();
 
-        void clickedReportButton();
+        void reportsButtonClicked();
     }
 }
