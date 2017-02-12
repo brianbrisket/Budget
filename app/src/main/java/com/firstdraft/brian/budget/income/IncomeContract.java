@@ -7,7 +7,7 @@ package com.firstdraft.brian.budget.income;
 public interface IncomeContract {
 
     interface Model {
-        String[] getCategories(boolean value);
+        String[] getCategories(boolean recurrence);
     }
 
     interface View {
@@ -18,7 +18,6 @@ public interface IncomeContract {
         void showLoadingView();
         void dismissLoadingView();
         void showErrorView(String errorMessage);
-
         void showIncomeSavedView();
     }
 
@@ -26,11 +25,8 @@ public interface IncomeContract {
         void bindView(IncomeContract.View view);
         void unbindView();
         void receivedMonetaryInput(Float incomeValue);
-
         void receivedRecurrence(boolean value);
-
         void receivedCategory(String category);
-
         void saveIncomeButtonClicked();
     }
 }
