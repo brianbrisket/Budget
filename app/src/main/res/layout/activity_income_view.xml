@@ -11,34 +11,32 @@
     tools:context="com.firstdraft.brian.budget.expense.ExpenseViewActivity">
 
     <TextView
-        android:id="@+id/add_expense_title"
+        android:id="@+id/add_income_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Add Expense"
+        android:text="Add Income"
         android:visibility="invisible"
         tools:visibility="visible"
         />
 
     <com.blackcat.currencyedittext.CurrencyEditText
-        android:id="@+id/expense_input_field"
-        style="@style/AppTheme"
+        android:id="@+id/income_input_field"
         android:layout_width="@dimen/currency_field_width"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_expense_title"
+        style="@style/AppTheme"
+        android:layout_below="@id/add_income_title"
         android:layout_centerHorizontal="true"
         android:visibility="invisible"
         tools:visibility="visible"
         />
 
-
     <TextView
         android:id="@+id/recurrence_menu_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/expense_input_field"
         android:layout_centerHorizontal="true"
+        android:layout_below="@id/income_input_field"
         android:layout_marginTop="@dimen/menu_margin_top"
         android:text="@string/recurrence_menu_title"
         android:visibility="invisible"
