@@ -8,6 +8,7 @@ public interface IncomeContract {
 
     interface Model {
         String[] getCategories(boolean recurrence);
+        void saveIncome(Float incomeValue);
     }
 
     interface View {
@@ -24,9 +25,9 @@ public interface IncomeContract {
     interface Presenter {
         void bindView(IncomeContract.View view);
         void unbindView();
-        void receivedMonetaryInput(Float incomeValue);
-        void receivedRecurrence(boolean value);
-        void receivedCategory(String category);
+        void monetaryInputReceived(Float incomeValue);
+        void recurrenceSelected(boolean recurrence);
+        void categorySelected(String category);
         void saveIncomeButtonClicked();
     }
 }

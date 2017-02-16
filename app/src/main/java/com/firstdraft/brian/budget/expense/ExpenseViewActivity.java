@@ -19,10 +19,10 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
     private TextView expenseInputTitle;
     private CurrencyEditText expenseInputField;
     private TextView recurrenceMenuTitle;
-    private Spinner recurrenceMenu;
+    private Spinner recurrenceMenuSpinner;
     private TextView categoryMenuTitle;
     private Spinner categoryMenu;
-    private Button addExpenseButton;
+    private Button expenseDoneButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +32,10 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         expenseInputTitle = (TextView) findViewById(R.id.add_expense_title);
         expenseInputField = (CurrencyEditText) findViewById(R.id.expense_input_field);
         recurrenceMenuTitle = (TextView) findViewById(R.id.recurrence_menu_title);
-        recurrenceMenu = (Spinner) findViewById(R.id.recurrence_menu);
+        recurrenceMenuSpinner = (Spinner) findViewById(R.id.recurrence_menu);
         categoryMenuTitle = (TextView) findViewById(R.id.category_menu_title);
         categoryMenu = (Spinner) findViewById(R.id.category_menu);
-        addExpenseButton = (Button) findViewById(R.id.save_expense_button);
+        expenseDoneButton = (Button) findViewById(R.id.save_expense_button);
 
         presenter = new ExpensePresenter();
         presenter.bindView(this);
@@ -63,10 +63,10 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         expenseInputTitle.setVisibility(View.VISIBLE);
         expenseInputField.setVisibility(View.VISIBLE);
         // TODO: 2/4/2017 change name of add expense button to something more relevant
-        addExpenseButton.setVisibility(View.VISIBLE);
+        expenseDoneButton.setVisibility(View.VISIBLE);
         // TODO: 2/4/2017 add to strings.xml "saveMonetaryInputFieldTextonButton" or something like that
-        addExpenseButton.setText("Confirm Amount");
-        addExpenseButton.setOnClickListener(new View.OnClickListener() {
+        expenseDoneButton.setText("Confirm Amount");
+        expenseDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String currencySymbol = expenseInputField.getCurrency().getSymbol();
@@ -83,16 +83,16 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.spinner_recurrence_values, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        recurrenceMenu.setAdapter(adapter);
+        recurrenceMenuSpinner.setAdapter(adapter);
 
         recurrenceMenuTitle.setVisibility(View.VISIBLE);
-        recurrenceMenu.setVisibility(View.VISIBLE);
+        recurrenceMenuSpinner.setVisibility(View.VISIBLE);
 
-        addExpenseButton.setText("Confirm Recurrence");
-        addExpenseButton.setOnClickListener(new View.OnClickListener() {
+        expenseDoneButton.setText("Confirm Recurrence");
+        expenseDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.recurrenceSelected(recurrenceMenu.getSelectedItem().toString());
+                presenter.recurrenceSelected(recurrenceMenuSpinner.getSelectedItem().toString());
             }
         });
     }
@@ -107,8 +107,8 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         categoryMenuTitle.setVisibility(View.VISIBLE);
         categoryMenu.setVisibility(View.VISIBLE);
 
-        addExpenseButton.setText("Confirm Category");
-        addExpenseButton.setOnClickListener(new View.OnClickListener() {
+        expenseDoneButton.setText("Confirm Category");
+        expenseDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.categorySelected(categoryMenu.getSelectedItem().toString());
@@ -118,9 +118,9 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
 
     @Override
     public void showConfirmExpenseButton() {
-        addExpenseButton.setText("Save Expense");
-        addExpenseButton.setVisibility(View.VISIBLE);
-        addExpenseButton.setOnClickListener(new View.OnClickListener() {
+        expenseDoneButton.setText("Save Expense");
+        expenseDoneButton.setVisibility(View.VISIBLE);
+        expenseDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.saveExpenseButtonClicked();

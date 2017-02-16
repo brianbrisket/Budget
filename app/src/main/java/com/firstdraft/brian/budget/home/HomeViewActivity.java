@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 
 import com.firstdraft.brian.budget.R;
 import com.firstdraft.brian.budget.expense.ExpenseViewActivity;
+import com.firstdraft.brian.budget.income.IncomeViewActivity;
 
 public class HomeViewActivity extends AppCompatActivity {
     private Button addExpenseButton;
@@ -25,9 +26,22 @@ public class HomeViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(), ExpenseViewActivity.class));
+            }
+        });
 
-                //addIncomeButton = (Button) findViewById(R.id.home_add_income_button);
-                //startActivity(new Intent(getBaseContext(), IncomeViewActivity.class));
+        addIncomeButton = (Button) findViewById(R.id.home_add_income_button);
+        addIncomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), IncomeViewActivity.class));
+            }
+        });
+
+        reportsButton = (ImageButton) findViewById(R.id.home_reports_image_button);
+        reportsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: 2/14/2017 Create Reports package
             }
         });
     }

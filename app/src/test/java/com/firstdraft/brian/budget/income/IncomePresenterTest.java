@@ -61,14 +61,14 @@ public class IncomePresenterTest {
         presenter.bindView(view);
         verify(view).showMonetaryInputField();
 
-        presenter.receivedMonetaryInput(incomeValue);
+        presenter.monetaryInputReceived(incomeValue);
         verify(view).showRecurrenceSpinner();
 
-        presenter.receivedRecurrence(recurrence = false);
+        presenter.recurrenceSelected(recurrence = false);
         verify(model).getCategories(recurrence);
         verify(view).showCategoriesSpinner(nonRecurringCategories);
 
-        presenter.receivedCategory(nonRecurringCat);
+        presenter.categorySelected(nonRecurringCat);
         verify(view).showConfirmIncomeButton();
 
         presenter.saveIncomeButtonClicked();
@@ -82,14 +82,14 @@ public class IncomePresenterTest {
         presenter.bindView(view);
         verify(view).showMonetaryInputField();
 
-        presenter.receivedMonetaryInput(incomeValue);
+        presenter.monetaryInputReceived(incomeValue);
         verify(view).showRecurrenceSpinner();
 
-        presenter.receivedRecurrence(recurrence = true);
+        presenter.recurrenceSelected(recurrence = true);
         verify(model).getCategories(recurrence);
         verify(view).showCategoriesSpinner(recurringCategories);
 
-        presenter.receivedCategory(recurringCat);
+        presenter.categorySelected(recurringCat);
         verify(view).showConfirmIncomeButton();
 
         presenter.saveIncomeButtonClicked();

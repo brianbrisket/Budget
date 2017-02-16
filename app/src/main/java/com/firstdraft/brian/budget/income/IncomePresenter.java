@@ -9,7 +9,7 @@ public class IncomePresenter implements IncomeContract.Presenter {
 
     private Float incomeValue;
 
-    IncomePresenter () {}
+    IncomePresenter () { this(new IncomeModel());}
 
     IncomePresenter (IncomeContract.Model model) {
         this.model = model;
@@ -27,24 +27,25 @@ public class IncomePresenter implements IncomeContract.Presenter {
     }
 
     @Override
-    public void receivedMonetaryInput(Float incomeValue) {
+    public void monetaryInputReceived(Float incomeValue) {
         this.incomeValue = incomeValue;
         view.showRecurrenceSpinner();
     }
 
     @Override
-    public void receivedRecurrence(boolean recurrence) {
+    public void recurrenceSelected(boolean recurrence) {
         view.showCategoriesSpinner(model.getCategories(recurrence));
     }
 
     @Override
-    public void receivedCategory(String category) {
+    public void categorySelected(String category) {
         view.showConfirmIncomeButton();
     }
 
     @Override
     public void saveIncomeButtonClicked() {
         view.showLoadingView();
+        model.saveIncome(incomeValue);
         view.dismissLoadingView();
         view.showIncomeSavedView();
     }
