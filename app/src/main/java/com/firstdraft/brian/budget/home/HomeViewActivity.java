@@ -12,32 +12,29 @@ import com.firstdraft.brian.budget.expense.ExpenseViewActivity;
 import com.firstdraft.brian.budget.income.IncomeViewActivity;
 
 public class HomeViewActivity extends AppCompatActivity {
-    private Button addExpenseButton;
-    private Button addIncomeButton;
-    private ImageButton reportsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_view);
 
-        addExpenseButton = (Button) findViewById(R.id.home_add_expense_button);
+        Button addExpenseButton = (Button) findViewById(R.id.home_add_expense_button);
         addExpenseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), ExpenseViewActivity.class));
+                startActivity(new Intent(HomeViewActivity.this, ExpenseViewActivity.class));
             }
         });
 
-        addIncomeButton = (Button) findViewById(R.id.home_add_income_button);
+        Button addIncomeButton = (Button) findViewById(R.id.home_add_income_button);
         addIncomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), IncomeViewActivity.class));
+                startActivity(new Intent(HomeViewActivity.this, IncomeViewActivity.class));
             }
         });
 
-        reportsButton = (ImageButton) findViewById(R.id.home_reports_image_button);
+        ImageButton reportsButton = (ImageButton) findViewById(R.id.home_reports_image_button);
         reportsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

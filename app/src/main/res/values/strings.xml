@@ -4,6 +4,11 @@
     <string name="recurrence_menu_title">Recurrence</string>
     <string name="category_menu_title">Categories</string>
     <string name="done_button">Done</string>
+    <string name="confirm_amount_button">Confirm Amount</string>
+    <string name="confirm_recurrence_button">Confirm Recurrence</string>
+    <string name="confirm_category_button">Confirm Category</string>
+    <string name="save_expense_button">Save Expense</string>
+    <string name="save_income_button">Save Income</string>
     <string-array name="spinner_recurrence_values">
         <item>NonRecurring</item>
         <item>Recurring</item>
@@ -20,5 +25,14 @@
         <item>Car Payment</item>
         <item>Car Insurance</item>
         <item>Phone Payment</item>
+    </string-array>
+    <string-array name="spinner_income_nonrecurring_categories">
+        <item>Freelance Job</item>
+        <item>Reimbursement</item>
+        <item>Refund</item>
+    </string-array>
+    <string-array name="spinner_income_recurring_categories">
+        <item>Primary Occupation</item>
+        <item>Part Time Job</item>
     </string-array>
 </resources>

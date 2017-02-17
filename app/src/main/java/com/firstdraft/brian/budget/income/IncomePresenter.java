@@ -3,7 +3,7 @@ package com.firstdraft.brian.budget.income;
 /**
  * Created by brian on 2/11/2017.
  */
-public class IncomePresenter implements IncomeContract.Presenter {
+class IncomePresenter implements IncomeContract.Presenter {
     private IncomeContract.View view;
     private IncomeContract.Model model;
 
@@ -33,7 +33,7 @@ public class IncomePresenter implements IncomeContract.Presenter {
     }
 
     @Override
-    public void recurrenceSelected(boolean recurrence) {
+    public void recurrenceSelected(String recurrence) {
         view.showCategoriesSpinner(model.getCategories(recurrence));
     }
 

@@ -4,7 +4,7 @@ package com.firstdraft.brian.budget.expense;
  * Created by brian on 1/31/2017.
  */
 
-public interface ExpenseContract {
+interface ExpenseContract {
 
     interface Model {
         // TODO: 2/1/2017 merge methods to have just getCategories(recurrenceType)

@@ -21,7 +21,7 @@ public class IncomePresenterTest {
     private IncomeContract.Presenter presenter;
 
     private Float incomeValue;
-    private boolean recurrence;
+    private String recurrence;
     private String[] nonRecurringCategories;
     private String nonRecurringCat;
     private String[] recurringCategories;
@@ -36,11 +36,11 @@ public class IncomePresenterTest {
         incomeValue = 2000f;
 
         nonRecurringCategories = new String[]{"FreelanceJob", "Reimbursement", "Other"};
-        when(model.getCategories(recurrence = false)).thenReturn(nonRecurringCategories);
+        when(model.getCategories(recurrence = "NonRecurring")).thenReturn(nonRecurringCategories);
         nonRecurringCat = nonRecurringCategories[0];
 
         recurringCategories = new String[]{"DayJob", "PartTimeJob", "Other"};
-        when(model.getCategories(recurrence = true)).thenReturn(recurringCategories);
+        when(model.getCategories(recurrence = "Recurring")).thenReturn(recurringCategories);
         recurringCat = recurringCategories[0];
     }
 
@@ -64,7 +64,7 @@ public class IncomePresenterTest {
         presenter.monetaryInputReceived(incomeValue);
         verify(view).showRecurrenceSpinner();
 
-        presenter.recurrenceSelected(recurrence = false);
+        presenter.recurrenceSelected(recurrence = "NonRecurring");
         verify(model).getCategories(recurrence);
         verify(view).showCategoriesSpinner(nonRecurringCategories);
 
@@ -85,7 +85,7 @@ public class IncomePresenterTest {
         presenter.monetaryInputReceived(incomeValue);
         verify(view).showRecurrenceSpinner();
 
-        presenter.recurrenceSelected(recurrence = true);
+        presenter.recurrenceSelected(recurrence = "Recurring");
         verify(model).getCategories(recurrence);
         verify(view).showCategoriesSpinner(recurringCategories);
 

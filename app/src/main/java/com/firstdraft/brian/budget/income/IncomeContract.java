@@ -4,10 +4,10 @@ package com.firstdraft.brian.budget.income;
  * Created by brian on 2/8/2017.
  */
 
-public interface IncomeContract {
+interface IncomeContract {
 
     interface Model {
-        String[] getCategories(boolean recurrence);
+        String[] getCategories(String recurrence);
         void saveIncome(Float incomeValue);
     }
 
@@ -26,7 +26,7 @@ public interface IncomeContract {
         void bindView(IncomeContract.View view);
         void unbindView();
         void monetaryInputReceived(Float incomeValue);
-        void recurrenceSelected(boolean recurrence);
+        void recurrenceSelected(String recurrence);
         void categorySelected(String category);
         void saveIncomeButtonClicked();
     }

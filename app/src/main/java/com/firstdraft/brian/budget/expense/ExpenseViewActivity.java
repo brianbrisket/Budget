@@ -64,8 +64,7 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         expenseInputField.setVisibility(View.VISIBLE);
         // TODO: 2/4/2017 change name of add expense button to something more relevant
         expenseDoneButton.setVisibility(View.VISIBLE);
-        // TODO: 2/4/2017 add to strings.xml "saveMonetaryInputFieldTextonButton" or something like that
-        expenseDoneButton.setText("Confirm Amount");
+        expenseDoneButton.setText(R.string.confirm_amount_button);
         expenseDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,7 +87,7 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         recurrenceMenuTitle.setVisibility(View.VISIBLE);
         recurrenceMenuSpinner.setVisibility(View.VISIBLE);
 
-        expenseDoneButton.setText("Confirm Recurrence");
+        expenseDoneButton.setText(R.string.confirm_recurrence_button);
         expenseDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +106,7 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
         categoryMenuTitle.setVisibility(View.VISIBLE);
         categoryMenu.setVisibility(View.VISIBLE);
 
-        expenseDoneButton.setText("Confirm Category");
+        expenseDoneButton.setText(R.string.confirm_category_button);
         expenseDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +117,7 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
 
     @Override
     public void showConfirmExpenseButton() {
-        expenseDoneButton.setText("Save Expense");
+        expenseDoneButton.setText(R.string.save_expense_button);
         expenseDoneButton.setVisibility(View.VISIBLE);
         expenseDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +142,7 @@ public class ExpenseViewActivity extends AppCompatActivity implements ExpenseCon
 
     }
 
+    // TODO: 2/17/2017 actually implement the save to some db
     @Override
     public void showExpenseSavedView() {
         Toast.makeText(this, "Expense Saved!", Toast.LENGTH_SHORT).show();

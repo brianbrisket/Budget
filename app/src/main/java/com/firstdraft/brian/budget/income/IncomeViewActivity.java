@@ -62,7 +62,7 @@ public class IncomeViewActivity extends AppCompatActivity implements IncomeContr
         currencyInputField.setVisibility(View.VISIBLE);
         incomeDoneButton.setVisibility(View.VISIBLE);
 
-        incomeDoneButton.setText("Confirm Income Amount");
+        incomeDoneButton.setText(R.string.confirm_amount_button);
         incomeDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +85,7 @@ public class IncomeViewActivity extends AppCompatActivity implements IncomeContr
         recurrenceMenuTitle.setVisibility(View.VISIBLE);
         recurrenceMenuSpinner.setVisibility(View.VISIBLE);
 
-        incomeDoneButton.setText("Confirm Recurrence");
+        incomeDoneButton.setText(R.string.confirm_recurrence_button);
         incomeDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,12 +98,27 @@ public class IncomeViewActivity extends AppCompatActivity implements IncomeContr
 
     @Override
     public void showCategoriesSpinner(String[] list) {
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categoryMenuSpinner.setAdapter(adapter);
 
+        categoryMenuTitle.setVisibility(View.VISIBLE);
+        categoryMenuSpinner.setVisibility(View.VISIBLE);
+
+        presenter.categorySelected(categoryMenuSpinner.getSelectedItem().toString());
     }
 
     @Override
     public void showConfirmIncomeButton() {
-
+        incomeDoneButton.setText(R.string.save_income_button);
+        incomeDoneButton.setVisibility(View.VISIBLE);
+        incomeDoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.saveIncomeButtonClicked();
+            }
+        });
     }
 
     @Override
