@@ -30,7 +30,6 @@ interface ExpenseContract {
         void monetaryInputReceived(Float expenseValue);
         void recurrenceSelected(String recurrenceType);
         void categorySelected(String category);
-
         void saveExpenseButtonClicked();
     }
 }
