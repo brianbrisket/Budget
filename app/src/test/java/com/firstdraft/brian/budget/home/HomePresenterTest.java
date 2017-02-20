@@ -47,7 +47,7 @@ public class HomePresenterTest {
     public void shouldNavigateToExpenseView_givenAddExpenseButtonClicked() {
         presenter.bindView(view);
         verify(model).getMonthAndYear();
-        verify(view).showDate(date);
+        verify(view).showMonthAndYear(date);
         verify(model).getMonthBalance();
         verify(view).showMonthBalance(balance);
 
@@ -59,7 +59,7 @@ public class HomePresenterTest {
     public void shouldNavigateToIncomeView_givenAddIncomeButtonClicked() {
         presenter.bindView(view);
         verify(model).getMonthAndYear();
-        verify(view).showDate(date);
+        verify(view).showMonthAndYear(date);
         verify(model).getMonthBalance();
         verify(view).showMonthBalance(balance);
 
@@ -71,7 +71,7 @@ public class HomePresenterTest {
     public void shouldNavigateToReportsView_givenReportsButtonClicked() {
         presenter.bindView(view);
         verify(model).getMonthAndYear();
-        verify(view).showDate(date);
+        verify(view).showMonthAndYear(date);
         verify(model).getMonthBalance();
         verify(view).showMonthBalance(balance);
 

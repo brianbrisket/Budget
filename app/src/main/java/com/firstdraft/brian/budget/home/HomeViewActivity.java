@@ -11,12 +11,17 @@ import com.firstdraft.brian.budget.R;
 import com.firstdraft.brian.budget.expense.ExpenseViewActivity;
 import com.firstdraft.brian.budget.income.IncomeViewActivity;
 
-public class HomeViewActivity extends AppCompatActivity {
+public class HomeViewActivity extends AppCompatActivity implements HomeContract.View {
+
+    private HomeContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_view);
+
+        presenter = new HomePresenter();
+        presenter.bindView(this);
 
         Button addExpenseButton = (Button) findViewById(R.id.home_add_expense_button);
         addExpenseButton.setOnClickListener(new View.OnClickListener() {
@@ -41,5 +46,30 @@ public class HomeViewActivity extends AppCompatActivity {
                 // TODO: 2/14/2017 Create Reports package
             }
         });
+    }
+
+    @Override
+    public void showMonthAndYear(String date) {
+
+    }
+
+    @Override
+    public void showMonthBalance(Float balance) {
+
+    }
+
+    @Override
+    public void navigateToAddExpenseView() {
+
+    }
+
+    @Override
+    public void navigateToAddIncomeView() {
+
+    }
+
+    @Override
+    public void navigateToReportsView() {
+
     }
 }

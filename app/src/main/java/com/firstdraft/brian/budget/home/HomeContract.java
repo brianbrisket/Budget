@@ -12,7 +12,7 @@ public interface HomeContract {
     }
 
     interface View {
-        void showDate(String date);
+        void showMonthAndYear(String date);
         void showMonthBalance(Float balance);
         void navigateToAddExpenseView();
         void navigateToAddIncomeView();

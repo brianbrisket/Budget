@@ -17,7 +17,8 @@ class HomePresenter implements HomeContract.Presenter {
     @Override
     public void bindView(HomeContract.View view) {
         this.view = view;
-        view.showDate(model.getMonthAndYear());
+
+        view.showMonthAndYear(model.getMonthAndYear());
         view.showMonthBalance(model.getMonthBalance());
     }
 
