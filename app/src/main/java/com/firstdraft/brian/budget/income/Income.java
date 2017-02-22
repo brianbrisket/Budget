@@ -3,7 +3,7 @@ package com.firstdraft.brian.budget.income;
 /**
  * Created by brisket on 2/14/2017.
  */
-public class Income {
+class Income {
     // TODO: 2/14/2017 implement class
     private Float incomeValue;
     private String recurrence;

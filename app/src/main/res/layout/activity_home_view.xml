@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="February 2017" />
+        android:text="Month Year" />
 
     <TextView
         android:id="@+id/home_current_balance_view"

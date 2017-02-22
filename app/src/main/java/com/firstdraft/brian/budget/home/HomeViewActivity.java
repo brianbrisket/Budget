@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.firstdraft.brian.budget.R;
 import com.firstdraft.brian.budget.expense.ExpenseViewActivity;
@@ -15,10 +16,14 @@ public class HomeViewActivity extends AppCompatActivity implements HomeContract.
 
     private HomeContract.Presenter presenter;
 
+    private TextView homeMonthAndYear;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_view);
+
+        homeMonthAndYear = (TextView) findViewById(R.id.home_month_year_top_view);
 
         presenter = new HomePresenter();
         presenter.bindView(this);
@@ -50,7 +55,7 @@ public class HomeViewActivity extends AppCompatActivity implements HomeContract.
 
     @Override
     public void showMonthAndYear(String date) {
-
+        homeMonthAndYear.setText(date);
     }
 
     @Override

@@ -8,7 +8,7 @@ import com.firstdraft.brian.budget.R;
 /**
  * Created by brisket on 2/14/2017.
  */
-public class IncomeModel implements IncomeContract.Model {
+class IncomeModel implements IncomeContract.Model {
 
     // TODO: 2/17/2017 set up to pull from resource
     @Override

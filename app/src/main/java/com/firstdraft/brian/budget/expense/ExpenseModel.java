@@ -3,7 +3,7 @@ package com.firstdraft.brian.budget.expense;
 /**
  * Created by brian on 2/1/2017.
  */
-public class ExpenseModel implements ExpenseContract.Model {
+class ExpenseModel implements ExpenseContract.Model {
 
     ExpenseModel() {}
 

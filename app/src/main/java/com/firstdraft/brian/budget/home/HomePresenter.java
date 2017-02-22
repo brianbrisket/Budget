@@ -8,6 +8,7 @@ class HomePresenter implements HomeContract.Presenter {
     private HomeContract.Model model;
 
     HomePresenter() {
+        this(new HomeModel());
     }
 
     HomePresenter(HomeContract.Model model) {

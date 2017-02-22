@@ -1,12 +1,19 @@
 package com.firstdraft.brian.budget.home;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  * Created by brian on 2/8/2017.
  */
-public class HomeModel implements HomeContract.Model {
+class HomeModel implements HomeContract.Model {
     @Override
     public String getMonthAndYear() {
-        return "February 2017";
+        DateFormat dateFormat = new SimpleDateFormat("MMMM d yyyy", Locale.US);
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 
     @Override
