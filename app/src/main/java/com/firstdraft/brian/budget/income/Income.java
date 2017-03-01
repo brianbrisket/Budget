@@ -19,4 +19,24 @@ class Income {
     public Float getIncomeValue() {
         return incomeValue;
     }
+
+    public void setIncomeValue(Float incomeValue) {
+        this.incomeValue = incomeValue;
+    }
+
+    public String getRecurrence() {
+        return recurrence;
+    }
+
+    public void setRecurrence(String recurrence) {
+        this.recurrence = recurrence;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }
